@@ -9,20 +9,20 @@
 
 
 // Exercise-2
-function fetchData(data,callback){
-    setTimeout(()=>{
-        // console.log("Fetching the data is"+" "+data);
-        console.log(`Fetching the data is ${data}`);
-        // in output we will see the value of data is undefiend because we store data in let 
-        // because variable that store in let/const hoisted but not initialzed instead of let i use the var then output would be diffrent
-    },3000);
-    callback(this.data);
-}
-let data=12;
-fetchData(data,function callback(data){
-    console.log("Fetched data is"+" " +data)
-}
-);
+// function fetchData(data,callback){
+//     setTimeout(()=>{
+//         // console.log("Fetching the data is"+" "+data);
+//         console.log(`Fetching the data is ${data}`);
+//         // in output we will see the value of data is undefiend because we store data in let 
+//         // because variable that store in let/const hoisted but not initialzed instead of let i use the var then output would be diffrent
+//     },3000);
+//     callback(this.data);
+// }
+// let data=12;
+// fetchData(data,function callback(data){
+//     console.log("Fetched data is"+" " +data)
+// }
+// );
 
 //Exercise-3----doubt???
 // function doHomework(subject,startCallback,progressCallback,completeHomework){
@@ -64,9 +64,27 @@ fetchData(data,function callback(data){
 // }
 
 // Exercise-6
-// const fetchUserdata=new Promise((resolve,reject)=>{resolve("Successfully")});
-// const fetchUserPost=new Promise((resolve,reject)=>{resolve("Successfuly")});
+// const user={
+//     name:"nikhil",
+//     age:"20"
+// };
+// const postData={
+//     postTitle:"post",
+//     uploadDate:"25-07-2024"
+// };
+// const p1= postData;
+// const p2= postData;
+// const p3= postData;
+// const post=[p1,p2,p3];
+// const fetchUserdata=new Promise((resolve,reject)=>{setTimeout(()=>{resolve(user)},2000) });
+// const fetchUserPost=new Promise((resolve,reject)=>{setTimeout(()=>{resolve(post)},3000) });
  
+// fetchUserdata.then((res)=>{
+//     console.log(res);
+//     return res;
+// }).then(()=>{
+//     return fetchUserPost;
+// }).then((res)=>{console.log(res)});
 // fetchUserdata.then(function userData(){
 //     setTimeout(()=>{console.log("fetching user data")},2000);
 // }).then(function postData(){
@@ -84,24 +102,35 @@ fetchData(data,function callback(data){
 // Promise.all([fetchWeather,fetchNews]).then((res)=>console.log(res));
 
 //Excercise-9
+const userobj={
+    name:"nikhil",
+    age:"20"
+};
+const postData={
+    postTitle:"post",
+    uploadDate:"25-07-2024"
+};
+const p1= postData;
+const p2= postData;
+const p3= postData;
+const postarray=[p1,p2,p3];
+const user=new Promise((resolve,reject)=>{setTimeout(()=>{resolve(userobj)},2000);});
+const post=new Promise((resolve,reject)=>{setTimeout(()=>{resolve(postarray)},3000);});
 
-// const user=new Promise((resolve,reject)=>{setTimeout(()=>{resolve("Successfully fetch user data")},2000);});
-// const post=new Promise((resolve,reject)=>{setTimeout(()=>{resolve("Successfully fetch user postinfo")},3000);});
-
-// async function fetchUser(){
-//     // return await user;
-//     const p= await user;   
-//     console.log(p);
+async function fetchUser(){
+    // return await user;
+    const p= await user;   
+    console.log(p);
     
 
-// }
-// async function fetchPost(){
-//     const p= await post;
-//     console.log(p);
-//     return p;
-// }
-// fetchUser();
-// fetchPost();
+}
+async function fetchPost(){
+    const p= await post;
+    console.log(p);
+    return p;
+}
+fetchUser();
+fetchPost();
 //Exercise-10
 // const fetchWeather=new Promise((resolve,rejrct)=>{setTimeout(()=>{resolve(console.log("fetched the weather data"))},2000)});
 // const fetchNews=new Promise((resolve,reject)=>{setTimeout(()=>{resolve(console.log("fetched the weather-news  data"))},5000)});
