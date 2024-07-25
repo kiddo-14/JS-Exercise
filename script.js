@@ -9,18 +9,20 @@
 
 
 // Exercise-2
-// function fetchData(data,callback){
-//     setTimeout(()=>{
-//         console.log("Fetching the data is"+data);
-//         // in output we will see the value of data is undefiend because we store data in let 
-//         // because variable that store in let/const hoisted but not initialzed instead of let i use the var then output would be diffrent
-//     },5000);
-//     callback(this.data);
-// }
-// let data=12;
-// fetchData(data,function callback(data){
-//     console.log("Fetched data is"+" " +data)
-// });
+function fetchData(data,callback){
+    setTimeout(()=>{
+        // console.log("Fetching the data is"+" "+data);
+        console.log(`Fetching the data is ${data}`);
+        // in output we will see the value of data is undefiend because we store data in let 
+        // because variable that store in let/const hoisted but not initialzed instead of let i use the var then output would be diffrent
+    },3000);
+    callback(this.data);
+}
+let data=12;
+fetchData(data,function callback(data){
+    console.log("Fetched data is"+" " +data)
+}
+);
 
 //Exercise-3----doubt???
 // function doHomework(subject,startCallback,progressCallback,completeHomework){
@@ -83,23 +85,23 @@
 
 //Excercise-9
 
-const user=new Promise((resolve,reject)=>{setTimeout(()=>{resolve("Successfully fetch user data")},2000);});
-const post=new Promise((resolve,reject)=>{setTimeout(()=>{resolve("Successfully fetch user postinfo")},3000);});
+// const user=new Promise((resolve,reject)=>{setTimeout(()=>{resolve("Successfully fetch user data")},2000);});
+// const post=new Promise((resolve,reject)=>{setTimeout(()=>{resolve("Successfully fetch user postinfo")},3000);});
 
-async function fetchUser(){
-    // return await user;
-    const p= await user;   
-    console.log(p);
+// async function fetchUser(){
+//     // return await user;
+//     const p= await user;   
+//     console.log(p);
     
 
-}
-async function fetchPost(){
-    const p= await post;
-    console.log(p);
-    return p;
-}
-fetchUser();
-fetchPost();
+// }
+// async function fetchPost(){
+//     const p= await post;
+//     console.log(p);
+//     return p;
+// }
+// fetchUser();
+// fetchPost();
 //Exercise-10
 // const fetchWeather=new Promise((resolve,rejrct)=>{setTimeout(()=>{resolve(console.log("fetched the weather data"))},2000)});
 // const fetchNews=new Promise((resolve,reject)=>{setTimeout(()=>{resolve(console.log("fetched the weather-news  data"))},5000)});
