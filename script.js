@@ -81,6 +81,25 @@
 
 // Promise.all([fetchWeather,fetchNews]).then((res)=>console.log(res));
 
+//Excercise-9
+
+const user=new Promise((resolve,reject)=>{setTimeout(()=>{resolve("Successfully fetch user data")},2000);});
+const post=new Promise((resolve,reject)=>{setTimeout(()=>{resolve("Successfully fetch user postinfo")},3000);});
+
+async function fetchUser(){
+    // return await user;
+    const p= await user;   
+    console.log(p);
+    
+
+}
+async function fetchPost(){
+    const p= await post;
+    console.log(p);
+    return p;
+}
+fetchUser();
+fetchPost();
 //Exercise-10
 // const fetchWeather=new Promise((resolve,rejrct)=>{setTimeout(()=>{resolve(console.log("fetched the weather data"))},2000)});
 // const fetchNews=new Promise((resolve,reject)=>{setTimeout(()=>{resolve(console.log("fetched the weather-news  data"))},5000)});
@@ -92,16 +111,16 @@
 //      console.log(q);
 // }
 
-//Exercise-11
-async function getUserData(){
-    try{
+//Exercise-11----doubt??
+// async function getUserData(){
+//     try{
            
-            console.log("fetching user data")
-            nhjgkjg();
-    }
-    catch (errr){
-          console.log("Error");
-    }
-}
-const user={age:10}
-getUserData();
+//             console.log("fetching user data")
+//             nhjgkjg();
+//     }
+//     catch (errr){
+//           console.log("Error");
+//     }
+// }
+// const user={age:10}
+// getUserData();
